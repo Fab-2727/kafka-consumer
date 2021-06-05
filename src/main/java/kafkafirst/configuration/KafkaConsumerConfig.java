@@ -26,7 +26,7 @@ public class KafkaConsumerConfig {
 	@Value("${spring.kafka.consumer.auto-offset-reset}")
 	public String AUTO_OFFSET_RESET;
 	@Value("${spring.kafka.consumer.enable-auto-commit}")
-	public String AUTO_COMMIT;
+	public String ENABLE_AUTO_COMMIT;
 	@Value("${spring.kafka.consumer.auto-commit-interval}")
 	public String AUTO_COMMIT_INTERVAL;
 	@Value("${spring.kafka.consumer.max-poll-records}")
@@ -38,6 +38,7 @@ public class KafkaConsumerConfig {
 		props.put(ConsumerConfig.GROUP_ID_CONFIG, GROUP_ID);
 		props.put(ConsumerConfig.CLIENT_ID_CONFIG, CLIENT_ID);
 		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, AUTO_OFFSET_RESET);
+		props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, ENABLE_AUTO_COMMIT);
 		props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, AUTO_COMMIT_INTERVAL);
 		props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, MAX_POLL_RECORDS);
 		props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
